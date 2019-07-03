@@ -11,7 +11,7 @@ new Vue({
 
     },
     mounted(){
-        this.get_class();
+        // this.get_class();
         this.get_eleve();
     },
     methods: {

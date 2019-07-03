@@ -8,5 +8,15 @@
 
 class Matiere
 {
+    use genos;
+
+    public $id;
+    public $nom_m;
+
+    public function __construct(){
+        $this ->primary_key = "id_m" ;
+        $this->id 	= 0;
+        $this->nom_m 	= "";
+    }
 
 }
