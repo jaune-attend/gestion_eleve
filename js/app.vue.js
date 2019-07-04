@@ -28,12 +28,7 @@ new Vue({
                 type:"POST",
                 data:{},
                 success:function(res){
-                    var tmp = JSON.parse(res);
-                    // scope.listeTodos = [];
-                    setTimeout(()=>{
-                        scope.listeClasse = tmp;
-                        scope.$forceUpdate();
-                    },1);
+                    // scope.listeClasse = JSON.parse(res);
                 },
             });
         },

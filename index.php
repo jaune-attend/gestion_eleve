@@ -20,17 +20,17 @@
 <!--    </div>-->
 </div>
 
-<!--<template id="tpl-classe-liste">-->
-<!--    <main>-->
-<!--        <li v-for="elem in listeClasse">-->
-<!--            {{elem.nom_c}}-->
-<!--            <classe-liste :id="elem.id" :ref="elem.id" :key="elem.id"></classe-liste>-->
-<!--        </li>-->
-<!--    </main>-->
-<!--</template>-->
+<template id="tpl-classe-liste">
+    <main>
+        <li v-for="elem in listeClasse">
+            {{elem.nom_c}}
+            <classe-liste :id="elem.id" :ref="elem.id" :key="elem.id"></classe-liste>
+        </li>
+    </main>
+</template>
 
 
-<!--<main id="app">-->
+<main id="app">
 <div class="container">
     <h2>Gestion des Classes</h2>
     <div class="row">
@@ -112,15 +112,16 @@
         </div>
     </div>
 </div>
-<!--</main>-->
+</main>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="./js/jquery.min.js"></script>
+<script src="./js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="js/vue.js"></script>
-<script src="./03-Api/Eleve.comp.js"></script>
-<script src="./03-Api/Classe.comp.js"></script>
-<script src="./js/app.vue.js"></script>
+<!--<script src="./03-Api/Eleve.comp.js"></script>-->
+<script src="03-Api/Classe.comp.js"></script>
+<script src="js/app.vue.js"></script>
 </body>
 </html>
