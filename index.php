@@ -23,8 +23,8 @@
 <template id="tpl-classe-liste">
     <main>
         <li v-for="elem in listeClasse">
-            {{elem.nom_c}}
-            <classe-liste :id="elem.id" :ref="elem.id" :key="elem.id"></classe-liste>
+        <li>
+            {{classe.nom_c}}
         </li>
     </main>
 </template>
@@ -45,11 +45,11 @@
                     </div>
                 </div><br><br><br>
 
-
                 <div v-for="elem in listeClasse">
-                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">Seconde</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>
-                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>
-                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>
+                    <classe-liste :id="elem.id" :ref="elem.id" :key="elem.id"></classe-liste>
+<!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
+<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
+<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
                 </div>
 
             </div>

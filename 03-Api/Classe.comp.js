@@ -1,6 +1,6 @@
 Vue.component("classeListe",{
     template:"#tpl-classe-liste",
-    props:["id"],
+    props:['id'],
     data() {
         return {
             nom_c: "",
@@ -19,6 +19,7 @@ Vue.component("classeListe",{
         GetClasse(){
             var scope = this;
             var id = scope.id;
+            // nom_c = scope.nom_c;
             $.ajax({
                 url: "03-Api/api.php?cas=classe",
                 type:"POST",
