@@ -18,7 +18,7 @@
 	$TABLE_CASE = "lowercase";
 
 	//DATABASE
-	$DATABASE_NAME ='cpsia';
+	$DATABASE_NAME ='vuejs';
 	$DATABASE_HOST ='localhost';
 	$DATABASE_PORT ='3306';
 	$DATABASE_USER ='root';
@@ -32,13 +32,14 @@
 	define("DATABASE_USER",$DATABASE_USER);
 	define("DATABASE_PSWD",$DATABASE_PSWD);
 
-	$URL_HOME = "http://localhost/exo-cpsia-genos/";
+	$URL_HOME = "http://localhost/gestion_eleve/";
 	define("URL_HOME",$URL_HOME);
 
 	// include(__DIR__."/genos-complete.class.php");
 
 	include(__DIR__."/genos.php");
-	include(__DIR__."/../1-class/todo.class.php");
-	include(__DIR__."/../1-class/todo_ligne.class.php");
-	// include(__DIR__."/code-affichage.php");
+	include(__DIR__."/../02-Class/Classe.class.php");
+	include(__DIR__."/../02-Class/Eleve.class.php");
+	include(__DIR__."/../02-Class/Matiere.class.php");
+	include(__DIR__."/../02-Class/Note.class.php");
 	

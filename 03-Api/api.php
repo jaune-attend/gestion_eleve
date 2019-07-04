@@ -1,7 +1,81 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jonathan
- * Date: 01/07/2019
- * Time: 15:51
- */
+<?php include("../01-Config/config-genos.php");
+
+$cas = $_GET["cas"];
+
+switch ($cas){
+    case 'classe':
+        $id = $_POST['id'];
+        $c = new Classe;
+        $c->id=$id;
+        $c->Load();
+
+        echo json_encode($c);
+        break;
+
+    case 'allclasse':
+        $c = new Classe;
+        $req = "SELECT * FROM classe ORDER BY nom_c";
+        $champs = $c->FieldList();
+        $res = $c->StructList($req, $champs, "json");
+        break;
+
+    case 'addClasse':
+        $c = new Classe;
+        $c->nom_c = $_POST['nom_c'];
+        $c->Add();
+        break;
+
+    case 'modifClasse':
+        $id = $_POST['id'];
+        $c = new Classe;
+        $c->id=$id;
+        $c->Load();
+
+        $c->nom_c = $_POST['nom_c'];
+        $c->Update();
+        break;
+
+    case 'supprClasse':
+        $c = new Classe;
+        $c->id = $_POST['id'];
+        $c->Delete();
+        break;
+
+    case 'matiere':
+        $id = $_POST['id'];
+        $m = new Matiere;
+        $m->id=$id;
+        $m->Load();
+
+        echo json_encode($m);
+        break;
+
+    case 'allMatiere':
+        $m = new Matiere;
+        $req = "SELECT * FROM matiere ORDER BY nom_m";
+        $champs = $m->FieldList();
+        $res = $m->StructList($req, $champs, "json");
+        break;
+
+    case 'addMatiere':
+        $m = new Matiere;
+        $m->nom_m = $_POST['nom_m'];
+        $m->Add();
+        break;
+
+    case 'modifMatiere':
+        $id = $_POST['id'];
+        $m = new Matiere;
+        $m->id=$id;
+        $m->Load();
+
+        $m->nom_m = $_POST['nom_m'];
+        $m->Update();
+        break;
+
+    case 'supprMatiere':
+        $m = new Matiere;
+        $m->id = $_POST['id'];
+        $m->Delete();
+        break;
+}
