@@ -72,8 +72,19 @@
     </div>
 </main>
 
+<template id="tpl-eleve-liste">
+    <main>
+        <h3>Ajout eleve</h3>
+        <input type="text" v-model="nom">
+        <input type="text" v-model="prenom">
+
+        <button @click="addEleve()" type="button" class="btn-success"></button>
+    </main>
+</template>
+
 <main id="app">
 <div class="container">
+    <eleve-liste :id=1 :ref=1  :key=1></eleve-liste>
     <h2>Gestion des Classes</h2>
     <div class="row">
         <div class="col-6">
