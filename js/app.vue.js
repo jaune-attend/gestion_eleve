@@ -2,6 +2,7 @@ new Vue({
     el: "#app",
     data: {
         listeClasse: [],
+        nom_c: "",
     },
     mounted() {
         this.GetAllClasse();
@@ -33,6 +34,21 @@ new Vue({
                     },1);
                 }
             })
+        },
+        AddClasse(){
+            var scope = this;
+            var nom_c = scope.nom_c;
+
+            // var nom_c = prompt("Veuillez saisir le nom de votre Todo Liste");
+            if(nom_c == null) return;
+            $.ajax({
+                url:"03-api/api.php?cas=AddClasse",
+                type:"POST",
+                data:{nom_c},
+                success:function(){
+                    scope.GetAllClasse();
+                },
+            });
         },
         filters: {},
         watch: {},

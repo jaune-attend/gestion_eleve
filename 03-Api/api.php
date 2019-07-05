@@ -20,7 +20,7 @@ switch ($cas){
         echo $res = $t->StructList($req,$champs,"json");
         break;
 
-    case 'addClasse':
+    case 'AddClasse':
         $c = new Classe;
         $c->nom_c = $_POST['nom_c'];
         $c->Add();

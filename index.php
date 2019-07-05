@@ -19,119 +19,86 @@
     </div>
 </div>
 
-<main id="app">
-    <h2>ALLO</h2>
-    <div class="row" v-for="elem in listeClasse">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{elem.nom_c}}</td>
-                    <td>Action</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
 
 <main id="app">
-<div class="container" id="onglet-1">
-    <h2>Gestion des Classes</h2>
-    <div class="row">
-        <div class="col-6">
-            <div class="block-left">
-                <div class="input-group col-6 float-right">
-                    <input type="text" placeholder="Ajouter une classe" class="form-control mt-3">
-                    <div class="input-group-append mt-3">
-                        <button type="button" class="btn btn-info">
-                            <img src="./css/plus.png" height="20" width="20">
-                        </button>
+    <div class="container" id="onglet-1">
+        <h2>Gestion des Classes</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="block-left">
+                    <div class="input-group col-6 float-right">
+                        <input v-model="nom_c" type="text"  placeholder="Ajouter une classe" class="form-control mt-3">
+                        <div class="input-group-append mt-3">
+                            <button type="button" class="btn btn-info"  @click="AddClasse()">
+                                <img src="./css/plus.png" height="20" width="20">
+                            </button>
+                        </div>
+                    </div><br><br><br>
+                    <div v-for="elem in listeClasse" style="padding-left: 10px; padding-right: 10px">
+
+                        <label class="form-control ">{{elem.nom_c}} <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span> </label>
+
                     </div>
-                </div><br><br><br>
-                <div v-for="elem in listeClasse">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Classe</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{elem.nom_c}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!--<classe-liste :id="elem.id_c" :ref="elem.id_c" :key="elem.id_c"></classe-liste> -->
-<!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="row">
-                <div class="col-4">
-                    <div class="block-selected" id="choix-1">
-                        <img src="./css/classe.png" height="80" width="80" class="mt-3" style="margin-bottom: 5px"><br>
-                        <b>Classe</b>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="block-selected" id="choix-1">
+                            <img src="./css/classe.png" height="80" width="80" class="mt-3" style="margin-bottom: 5px"><br>
+                            <b>Classe</b>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="block-right" id="choix-2">
-                        <img src="./css/mat.png" height="80" width="80" class="mt-3" style="margin-bottom: 5px"><br>
-                        <b>Matière</b>
-
+                    <div class="col-4">
+                        <div class="block-right" id="choix-2">
+                            <img src="./css/mat.png" height="80" width="80" class="mt-3" style="margin-bottom: 5px"><br>
+                            <b>Matière</b>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="block-right" id="choix-3">
-                        <img src="./css/cap.png" height="100" width="100"><br>
-                        <b>Elèves</b>
+                    <div class="col-4">
+                        <div class="block-right" id="choix-3">
+                            <img src="./css/cap.png" height="100" width="100"><br>
+                            <b>Elèves</b>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="under-block">
-                        <h3 class="text-center" style="padding-top: 10px">Matière</h3>
-                        <select style="width: 180px; height: 37px; margin-left: 10px; margin-bottom: 20px; border-radius: 3px">
-                            <option value="">Maths</option>
-                            <option value="">Français</option>
-                        </select> <button type="button" class="btn btn-info" style="margin-top: -5px">
-                            <img src="./css/plus.png" height="20" width="20">
-                        </button>
+                    <div class="col-6">
+                        <div class="under-block">
+                            <h3 class="text-center" style="padding-top: 10px">Matière</h3>
+                            <select style="width: 180px; height: 37px; margin-left: 10px; margin-bottom: 20px; border-radius: 3px">
+                                <option value="">Maths</option>
+                                <option value="">Français</option>
+                            </select> <button type="button" class="btn btn-info" style="margin-top: -5px">
+                                <img src="./css/plus.png" height="20" width="20">
+                            </button>
 
-                        <label class="form-control">Histoire<span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                        <label class="form-control">Physique/Chimie <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                        <label class="form-control">EPS <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <label class="form-control">Histoire<span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <label class="form-control">Physique/Chimie <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <label class="form-control">EPS <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="under-block">
-                        <h3 class="text-center" style="padding-top: 10px">Elève</h3>
+                    <div class="col-6">
+                        <div class="under-block">
+                            <h3 class="text-center" style="padding-top: 10px">Elève</h3>
 
-                        <select style="width: 180px; height: 37px; margin-left: 10px; margin-bottom: 20px; border-radius: 3px">
-                            <option value="">John Bulldog</option>
-                            <option value="">Henry Dick</option>
-                        </select> <button type="button" class="btn btn-info" style="margin-top: -5px">
-                            <img src="./css/plus.png" height="20" width="20">
-                        </button>
+                            <select style="width: 180px; height: 37px; margin-left: 10px; margin-bottom: 20px; border-radius: 3px">
+                                <option value="">John Bulldog</option>
+                                <option value="">Henry Dick</option>
+                            </select> <button type="button" class="btn btn-info" style="margin-top: -5px">
+                                <img src="./css/plus.png" height="20" width="20">
+                            </button>
 
-                        <label class="form-control">Jean Mimolette <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <label class="form-control">Jean Mimolette <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
                             <label class="form-control">Peter Poil <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                                <label class="form-control">Maggie Piggy <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <label class="form-control">Maggie Piggy <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--/////////////////////////////// TEST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--/////////////////////////////// TEST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="container hidden" id="onglet-2">
         <h2>Gestion des Matières</h2>
@@ -147,12 +114,12 @@
                         </div>
                     </div><br><br><br>
 
-                    <div v-for="elem in listeMatiere">
-                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>
-                        <!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                        <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                        <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                    </div>
+<!--                    <div v-for="elem in listeMatiere">-->
+<!--                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>-->
+<!--                                            <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
+<!--                                            <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
+<!--                                            <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
+<!--                    </div>-->
                 </div>
             </div>
             <div class="col-6">
@@ -231,12 +198,12 @@
                         </div>
                     </div><br><br><br>
 
-                    <div v-for="elem in listeMatiere">
-                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>
+<!--                    <div v-for="elem in listeMatiere">-->
+<!--                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>-->
                         <!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
                         <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
                         <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                    </div>
+<!--                    </div>-->
                 </div>
             </div>
             <div class="col-6">
@@ -295,8 +262,7 @@
         </div>
     </div>
 </main>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script src="./js/jquery.min.js"></script>
 <script src="./js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
