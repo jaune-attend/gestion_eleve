@@ -10,6 +10,7 @@ class Eleve
 {
     use genos;
 
+    public $primary_key;
     public $id;
     public $nom;
     public $prenom;
