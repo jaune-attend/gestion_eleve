@@ -3,10 +3,12 @@ new Vue({
     data: {
         listeClasse: [],
         list_eleve: [],
+        list_matiere: [],
     },
     mounted() {
         this.GetAllClasse();
         this.GetAllEleve();
+        this.GetAllMatiere();
     },
     methods: {
         GetAllClasse(){
@@ -32,9 +34,23 @@ new Vue({
                 data: {},
                 success: function (res) {
                     var tmp = JSON.parse(res);
-                    console.log(res);
                     setTimeout(() => {
                         scope.list_eleve = tmp;
+                        scope.$forceUpdate();
+                    }, 1);
+                }
+            })
+        },
+        GetAllMatiere(){
+            var scope = this;
+            $.ajax({
+                url: "03-api/api.php?cas=allmatiere",
+                type: "POST",
+                data: {},
+                success: function (res) {
+                    var tmp = JSON.parse(res);
+                    setTimeout(() => {
+                        scope.list_matiere = tmp;
                         scope.$forceUpdate();
                     }, 1);
                 }

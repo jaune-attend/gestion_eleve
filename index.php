@@ -54,6 +54,22 @@
             </tbody>
         </table>
     </div>
+
+    <div class="row col-sm-6">
+        <h3>Les Matieres</h3>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Nom matiere</th>
+                </tr>
+            </thead>
+            <tbody v-for="matiere in list_matiere">
+                <tr>
+                    <td>{{ matiere.nom_m }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 <main id="app">

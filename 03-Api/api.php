@@ -25,7 +25,12 @@ switch ($cas){
         $champs = $e->FieldList();
         echo  $res = $e->StructList($req, $champs, "json");
         break;
-
+    case 'allmatiere':
+        $m = new Matiere();
+        $req = "SELECT * FROM matiere ORDER BY nom_m";
+        $champs = $m->FieldList();
+        echo $res = $m->StructList($req, $champs, 'json');
+        break;
     case 'addClasse':
         $c = new Classe;
         $c->nom_c = $_POST['nom_c'];
