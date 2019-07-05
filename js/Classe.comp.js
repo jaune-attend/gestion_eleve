@@ -12,13 +12,11 @@ Vue.component("classeListe",{
     computed :{
     },
     mounted(){
-        this.GetClasse();
     },
     methods: {
         GetClasse(){
             var scope = this;
             var id = scope.id;
-            // nom_c = scope.nom_c;
             $.ajax({
                 url: "03-Api/api.php?cas=classe",
                 type:"POST",
@@ -26,7 +24,6 @@ Vue.component("classeListe",{
                 success:function(res){
                     scope.classe = JSON.parse(res);
                 },
-
             });
         },
         ModifClasse(){

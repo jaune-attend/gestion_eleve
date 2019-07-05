@@ -17,20 +17,39 @@
     </div>
 </div>
 
-<main id="app">
-    <h2>ALLO</h2>
-    <div class="row" v-for="elem in listeClasse">
+<!--Affichage de toute les classe (app.vue.js) -->
+<main id="app" class="container">
+    <div class="row">
+        <h2>Liste de Classe</h2>
         <table>
             <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>action</th>
-                </tr>
+            <tr>
+                <th>Nom</th>
+                <th>action</th>
+            </tr>
             </thead>
-            <tbody>
+            <tbody v-for="elem in listeClasse">
                 <tr>
                     <td>{{elem.nom_c}}</td>
                     <td>Action</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Affichage de tout les eleves (app.vue.js) -->
+    <div class="row">
+        <h3>Liste des eleves</h3>
+        <table class="table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+            </tr>
+            </thead>
+            <tbody v-for="eleve in list_eleve">
+                <tr>
+                    <td><b>{{eleve.nom}}</b></td>
+                    <td>{{eleve.prenom}}</td>
                 </tr>
             </tbody>
         </table>

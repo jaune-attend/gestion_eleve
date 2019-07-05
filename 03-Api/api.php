@@ -19,6 +19,12 @@ switch ($cas){
         $champs = $t->FieldList();
         echo $res = $t->StructList($req,$champs,"json");
         break;
+    case 'alleleve':
+        $e = new Eleve();
+        $req = "SELECT * FROM eleve ORDER BY nom";
+        $champs = $e->FieldList();
+        echo  $res = $e->StructList($req, $champs, "json");
+        break;
 
     case 'addClasse':
         $c = new Classe;
