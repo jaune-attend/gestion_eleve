@@ -5,7 +5,6 @@ Vue.component("classeListe",{
         return {
             nom_c: "",
             classe: {},
-            listeClasse:[],
         }
     },
 

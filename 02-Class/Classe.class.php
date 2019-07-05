@@ -10,6 +10,7 @@ class Classe
 {
     use genos;
 
+    public $primary_key;
     public $id;
     public $nom_c;
 

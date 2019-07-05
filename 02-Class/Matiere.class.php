@@ -10,6 +10,7 @@ class Matiere
 {
     use genos;
 
+    public $primary_key;
     public $id;
     public $nom_m;
 
