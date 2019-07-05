@@ -2,24 +2,15 @@ new Vue({
     el: "#app",
     data: {
         listeClasse: [],
-        nom_c: "",
+        list_eleve: [],
+        list_matiere: [],
     },
     mounted() {
         this.GetAllClasse();
+        this.GetAllEleve();
+        this.GetAllMatiere();
     },
     methods: {
-        GetListeClasse() {
-            var scope = this;
-            $.ajax({
-                url: "03-Api/api.php?cas=allclasse",
-                type: "POST",
-                data: {},
-                success: function (res) {
-                    console.log(res);
-                    scope.listeClasse = JSON.parse(res);
-                },
-            });
-        },
         GetAllClasse(){
             var scope = this;
             $.ajax({
@@ -35,20 +26,35 @@ new Vue({
                 }
             })
         },
-        AddClasse(){
+        GetAllEleve() {
             var scope = this;
-            var nom_c = scope.nom_c;
-
-            // var nom_c = prompt("Veuillez saisir le nom de votre Todo Liste");
-            if(nom_c == null) return;
             $.ajax({
-                url:"03-api/api.php?cas=AddClasse",
-                type:"POST",
-                data:{nom_c},
-                success:function(){
-                    scope.GetAllClasse();
-                },
-            });
+                url: "03-api/api.php?cas=alleleve",
+                type: "POST",
+                data: {},
+                success: function (res) {
+                    var tmp = JSON.parse(res);
+                    setTimeout(() => {
+                        scope.list_eleve = tmp;
+                        scope.$forceUpdate();
+                    }, 1);
+                }
+            })
+        },
+        GetAllMatiere(){
+            var scope = this;
+            $.ajax({
+                url: "03-api/api.php?cas=allmatiere",
+                type: "POST",
+                data: {},
+                success: function (res) {
+                    var tmp = JSON.parse(res);
+                    setTimeout(() => {
+                        scope.list_matiere = tmp;
+                        scope.$forceUpdate();
+                    }, 1);
+                }
+            })
         },
         filters: {},
         watch: {},

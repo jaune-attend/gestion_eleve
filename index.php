@@ -19,7 +19,6 @@
     </div>
 </div>
 
-
 <main id="app">
     <div class="container" id="onglet-1">
         <h2>Gestion des Classes</h2>
@@ -27,7 +26,7 @@
             <div class="col-6">
                 <div class="block-left">
                     <div class="input-group col-6 float-right">
-                        <input v-model="nom_c" type="text"  placeholder="Ajouter une classe" class="form-control mt-3">
+                        <input v-model="nom_c" type="text"  placeholder="Ajouter une classe" class="form-control mt-3">    <!--///// AJOUTER UNE CLASSE ////--->
                         <div class="input-group-append mt-3">
                             <button type="button" class="btn btn-info"  @click="AddClasse()">
                                 <img src="./css/plus.png" height="20" width="20">
@@ -63,18 +62,18 @@
                     </div>
                     <div class="col-6">
                         <div class="under-block">
-                            <h3 class="text-center" style="padding-top: 10px">Matière</h3>
+                            <h3 class="text-center" style="padding-top: 10px">Matières</h3>
                             <select style="width: 180px; height: 37px; margin-left: 10px; margin-bottom: 20px; border-radius: 3px">
                                 <option value="">Maths</option>
                                 <option value="">Français</option>
                             </select> <button type="button" class="btn btn-info" style="margin-top: -5px">
                                 <img src="./css/plus.png" height="20" width="20">
                             </button>
+                            <div v-for="elem in list_matiere" style="padding-left: 10px; padding-right: 10px">
 
-                            <label class="form-control">Histoire<span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">Physique/Chimie <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">EPS <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                                <label class="form-control ">{{elem.nom_m}} <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span> </label>
 
+                            </div>
                         </div>
                     </div>
                     <div class="col-6">
@@ -108,18 +107,21 @@
                     <div class="input-group col-6 float-right">
                         <input type="text" placeholder="Ajouter une matière" class="form-control mt-3">
                         <div class="input-group-append mt-3">
-                            <button type="button" class="btn btn-info">
+                            <button type="button" class="btn btn-info">                             <!--///// AJOUTER UNE MATIERE ////--->
                                 <img src="./css/plus.png" height="20" width="20">
                             </button>
                         </div>
                     </div><br><br><br>
 
-<!--                    <div v-for="elem in listeMatiere">-->
-<!--                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>-->
-<!--                                            <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                                            <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                                            <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    </div>-->
+                    <div v-for="elem in list_matiere" style="padding-left: 10px; padding-right: 10px">
+
+                        <label class="form-control ">{{elem.nom_m}}                                 <!--///// SUPPRIMER UNE MATIERE ////--->
+                            <span class="float-right">
+                                <img src="./css/delete.png" height="20" width="20" style="margin-right: 10px">
+                            </span>                                                                 <!--///// --------------------- ////--->
+                        </label>
+
+                    </div>
                 </div>
             </div>
             <div class="col-6">
@@ -153,10 +155,11 @@
                                 <img src="./css/plus.png" height="20" width="20">
                             </button>
 
-                            <label class="form-control">Seconde A <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">Première<span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
+                            <div v-for="elem in listeClasse" style="padding-left: 10px; padding-right: 10px">
 
+                                <label class="form-control ">{{elem.nom_c}}  </label>
+
+                            </div>
 
                         </div>
                     </div>
@@ -171,10 +174,9 @@
                                 <img src="./css/plus.png" height="20" width="20">
                             </button>
 
-                            <label class="form-control">Jean Mimolette <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">Peter Poil <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-                            <label class="form-control">Maggie Piggy <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></label>
-
+                            <div v-for="eleve in list_eleve" style="padding-left: 10px; padding-right: 10px">
+                                <label class="form-control ">{{eleve.nom}} {{eleve.prenom}}  <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span> </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,7 +184,7 @@
         </div>
     </div>
 
-    <!--/////////////////////////////// TEST 2 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--/////////////////////////////// PARTIE ELEVE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="container hidden" id="onglet-3">
         <h2>Gestion des Elèves</h2>
@@ -192,18 +194,21 @@
                     <div class="input-group col-6 float-right">
                         <input type="text" placeholder="Ajouter un élève" class="form-control mt-3">
                         <div class="input-group-append mt-3">
-                            <button type="button" class="btn btn-info">
+                            <button type="button" class="btn btn-info">                         <!----- BOUTON AJOUTER ELEVE-------->
                                 <img src="./css/plus.png" height="20" width="20">
                             </button>
                         </div>
                     </div><br><br><br>
 
-<!--                    <div v-for="elem in listeMatiere">-->
-<!--                        <matiere-liste :id="elem.id" :ref="elem.id" :key="elem.id"></matiere-liste>-->
-                        <!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                        <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-                        <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    </div>-->
+                    <div v-for="eleve in list_eleve" style="padding-left: 10px; padding-right: 10px">
+
+                        <label class="form-control ">{{eleve.nom}} {{eleve.prenom}}
+                            <span class="float-right">                                              <!--///// SUPPRIMER UN ELEVE ////--->
+                                <img src="./css/delete.png" height="20" width="20" style="margin-right: 10px">
+                            </span>                                                                 <!--///// ------------------ ////--->
+                        </label>
+
+                    </div>
                 </div>
             </div>
             <div class="col-6">
@@ -229,12 +234,13 @@
                     </div>
                     <div class="col-6">
                         <div class="under-block">
-                            <h3 class="text-center" style="padding-top: 10px">Matières</h3>
+                            <h3 class="text-center mb-4" style="padding-top: 10px">Matières</h3>
 
-                            <label class="form-control mt-4 btn-primary">Chimie <span class="float-right"><b>11</b></span></label>
-                            <label class="form-control">Histoire <span class="float-right"><b>13</b></span></label>
-                            <label class="form-control">Géographie <span class="float-right"><b>8.5</b></span></label>
+                            <div v-for="elem in list_matiere"  style="padding-left: 10px; padding-right: 10px">
 
+                                <label class="form-control ">{{elem.nom_m}} </label>
+
+                            </div>
 
                         </div>
                     </div>
