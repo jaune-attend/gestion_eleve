@@ -1,4 +1,5 @@
-<?php include("../01-Config/config-genos.php");
+<?php
+    include("../01-Config/config-genos.php");
 
 $cas = $_GET["cas"];
 
@@ -6,17 +7,17 @@ switch ($cas){
     case 'classe':
         $id = $_POST['id'];
         $c = new Classe;
-        $c->id=$id;
+        $c->id= $id;
         $c->Load();
 
         echo json_encode($c);
         break;
 
     case 'allclasse':
-        $c = new Classe;
+        $t = new Classe;
         $req = "SELECT * FROM classe ORDER BY nom_c";
-        $champs = $c->FieldList();
-        $res = $c->StructList($req, $champs, "json");
+        $champs = $t->FieldList();
+        echo $res = $t->StructList($req,$champs,"json");
         break;
 
     case 'addClasse':

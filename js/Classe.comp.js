@@ -5,11 +5,11 @@ Vue.component("classeListe",{
         return {
             nom_c: "",
             classe: {},
+            listeClasses:[],
         }
     },
 
     computed :{
-
     },
     mounted(){
         this.GetClasse();

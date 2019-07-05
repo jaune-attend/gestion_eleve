@@ -15,9 +15,8 @@ class Classe
     public $nom_c;
 
     public function __construct(){
-        $this->primary_key = "id_c" ;
         $this->id 	= 0;
-        $this->nom_c 	= "";
+        $this->nom_c    = "";
     }
 
 }
