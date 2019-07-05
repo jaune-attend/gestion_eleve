@@ -15,20 +15,27 @@
     <div class="row">
     <div class="col header"><h1>Hypergestion </h1></div>
     </div>
-<!--    <div id="eleve">-->
-<!--        <h2> {{ nom }} </h2>-->
-<!--    </div>-->
 </div>
 
-<template id="tpl-classe-liste">
-    <main>
-        <li v-for="elem in listeClasse">
-        <li>
-            {{classe.nom_c}}
-        </li>
-    </main>
-</template>
-
+<main id="app">
+    <h2>ALLO</h2>
+    <div class="row" v-for="elem in listeClasse">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{elem.nom_c}}</td>
+                    <td>Action</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
 
 <main id="app">
 <div class="container">
@@ -44,14 +51,24 @@
                         </button>
                     </div>
                 </div><br><br><br>
-
                 <div v-for="elem in listeClasse">
-                    <classe-liste :id="elem.id" :ref="elem.id" :key="elem.id"></classe-liste>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Classe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{elem.nom_c}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<classe-liste :id="elem.id_c" :ref="elem.id_c" :key="elem.id_c"></classe-liste> -->
 <!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
 <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
 <!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
                 </div>
-
             </div>
         </div>
         <div class="col-6">
@@ -121,7 +138,7 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="js/vue.js"></script>
 <!--<script src="./03-Api/Eleve.comp.js"></script>-->
-<script src="03-Api/Classe.comp.js"></script>
+<script src="js/Classe.comp.js"></script>
 <script src="js/app.vue.js"></script>
 </body>
 </html>
