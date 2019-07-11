@@ -29,7 +29,10 @@ Vue.component('eleveListe',
             },
             addEleve() {
                 var scope = this;
+                var nom = scope.nom;
+                var prenom = scope.prenom;
 
+                alert("Je suis " + nom + "  " + prenom);
             }
         }
     });

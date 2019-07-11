@@ -4,6 +4,7 @@ new Vue({
         listeClasse: [],
         list_eleve: [],
         list_matiere: [],
+        counter: 0,
     },
     mounted() {
         this.GetAllClasse();

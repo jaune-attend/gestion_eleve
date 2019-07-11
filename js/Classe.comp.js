@@ -57,5 +57,14 @@ Vue.component("classeListe",{
         //     });
         // },
 
+        ajout(){
+
+        },
+
+        test(){
+            alert(this.nom_c);
+        },
+
+
     }
 });
