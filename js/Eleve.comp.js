@@ -4,35 +4,64 @@ Vue.component('eleveListe',
         props: ['id'],
         data() {
             return {
-                list_eleve: [],
                 nom: "",
                 prenom: "",
+                list_eleve: [],
             }
         },
         computed: {},
         mounted() {
-            // this.get_class();
-            this.GetAllEleve();
+            this.getAllEleve();
         },
         methods: {
-            get_eleve() {
+
+            getAllEleve() {
                 var scope = this;
                 // faire appel a api.php et le case pour récup dans la bdd
                 $.ajax({
-                    url: "03-Api/api.php?cas=eleve",
+                    url: "03-Api/api.php?cas=alleleve",
                     type: 'POST',
-                    data: {id},
+                    data: {},
                     success: function (res) {
-                        scope.todos = JSON.parse(res);
+                        var tmp = JSON.parse(res);
+                        setTimeout(()=>{
+                            scope.list_eleve = tmp;
+                            scope.$forceUpdate();
+                        },1);
                     }
                 })
             },
+
             addEleve() {
                 var scope = this;
                 var nom = scope.nom;
                 var prenom = scope.prenom;
 
-                alert("Je suis " + nom + "  " + prenom);
+                $.ajax({
+                    url: "03-Api/api.php?cas=addEleve",
+                    type: "POST",
+                    data: {nom, prenom},
+                    success: function () {
+                        scope.nom = "";
+                        scope.prenom = "";
+                        scope.getAllEleve();
+                    },
+                });
+            },
+
+            supprEleve(eleve){
+                var scope = this;
+                var id = eleve.id;
+
+                $.ajax({
+                   url: "03-Api/api.php?cas=supprEleve",
+                   type: "POST",
+                   data: {id},
+                    success: function() {
+                       alert("L'élève est supprimé");
+                       scope.getAllEleve();
+                    }
+                });
             }
         }
     });

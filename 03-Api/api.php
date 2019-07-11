@@ -5,13 +5,7 @@ $cas = $_GET["cas"];
 
 switch ($cas) {
 
-    case 'allclasse':
-        $t = new Classe;
-        $req = "SELECT * FROM classe ORDER BY nom_c";
-        $champs = $t->FieldList();
-        echo $res = $t->StructList($req, $champs, "json");
-        break;
-
+///////////////////////////////////////////// ELEVE //////////////////////////////:
     case 'alleleve':
         $e = new Eleve();
         $req = "SELECT * FROM eleve ORDER BY nom";
@@ -19,44 +13,20 @@ switch ($cas) {
         echo $res = $e->StructList($req, $champs, "json");
         break;
 
-    case 'allmatiere':
-        $m = new Matiere();
-        $req = "SELECT * FROM matiere ORDER BY nom_m";
-        $champs = $m->FieldList();
-        echo $res = $m->StructList($req, $champs, 'json');
+    case 'addEleve':
+        $e = new Eleve();
+        $e->prenom = $_POST['prenom'];
+        $e->nom = $_POST['nom'];
+
+        $e->Add();
         break;
 
-    case 'classe':
-        $id = $_POST['id'];
-        $c = new Classe;
-        $c->id = $id;
-        $c->Load();
-
-        echo json_encode($c);
+    case 'supprEleve':
+        $e = new Eleve();
+        $e->id = $_POST['id'];
+        $e->Delete();
         break;
-
-    case 'addClasse':
-        $c = new Classe;
-        $c->nom_c = $_POST['nom_c'];
-        $c->Add();
-        break;
-
-    case 'modifClasse':
-        $id = $_POST['id'];
-        $c = new Classe;
-        $c->id = $id;
-        $c->Load();
-
-        $c->nom_c = $_POST['nom_c'];
-        $c->Update();
-        break;
-
-    case 'supprClasse':
-        $c = new Classe;
-        $c->id = $_POST['id'];
-        $c->Delete();
-        break;
-
+        ///////////////////////////////////// MATIERE ///////////////////////////////
     case 'matiere':
         $id = $_POST['id'];
         $m = new Matiere;
@@ -94,4 +64,44 @@ switch ($cas) {
         $m->id = $_POST['id'];
         $m->Delete();
         break;
+
+        ///////////////////////////////////// CLASSE /////////////////////////////////
+    case 'allclasse':
+        $t = new Classe;
+        $req = "SELECT * FROM classe ORDER BY nom_c";
+        $champs = $t->FieldList();
+        echo $res = $t->StructList($req, $champs, "json");
+        break;
+
+    case 'classe':
+        $id = $_POST['id'];
+        $c = new Classe;
+        $c->id = $id;
+        $c->Load();
+
+        echo json_encode($c);
+        break;
+
+    case 'addClasse':
+        $c = new Classe;
+        $c->nom_c = $_POST['nom_c'];
+        $c->Add();
+        break;
+
+    case 'modifClasse':
+        $id = $_POST['id'];
+        $c = new Classe;
+        $c->id = $id;
+        $c->Load();
+
+        $c->nom_c = $_POST['nom_c'];
+        $c->Update();
+        break;
+
+    case 'supprClasse':
+        $c = new Classe;
+        $c->id = $_POST['id'];
+        $c->Delete();
+        break;
+
 }

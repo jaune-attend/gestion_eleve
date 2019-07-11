@@ -15,62 +15,49 @@ Vue.component("classeListe",{
         this.GetClasses();
     },
     methods: {
-        GetClasses(){
+        GetClasses() {
             var scope = this;
             $.ajax({
-                url:"03-Api/api.php?cas=allclasse",
-                type:"POST",
-                data:{},
-                success:function(res){
+                url: "03-Api/api.php?cas=allclasse",
+                type: "POST",
+                data: {},
+                success: function (res) {
                     var tmp = JSON.parse(res);
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         scope.listeClasse = tmp;
                         scope.$forceUpdate();
-                    },1);
+                    }, 1);
                 }
             })
         },
-        ModifClasse(){
+        ModifClasse() {
             var scope = this;
             var id = scope.id;
             var nom_c = prompt("Modifier le nom de la classe");
-            if(nom_c == null) return;
+            if (nom_c == null) return;
 
             $.ajax({
-                url:"api/api.php?cas=modifClasse",
+                url: "03-Api/api.php?cas=modifClasse",
                 type: "POST",
-                data:{id, nom_c},
-                success:function(){
+                data: {id, nom_c},
+                success: function () {
                     scope.GetClasses();
                 },
             });
         },
-        AddClasse(){
+        AddClasse() {
             var scope = this;
-            // alert(scope.nom_c);
             var id = scope.id;
             var nom_c = scope.nom_c;
-
             $.ajax({
-                url:"03-Api/api.php?cas=addClasse",
+                url: "03-Api/api.php?cas=addClasse",
                 type: "POST",
                 data: {nom_c},
-                success:function(){
-                    // alert(scope.nom_c);
+                success: function () {
                     scope.nom_c = "";
                     scope.GetClasses();
                 },
             });
         },
-
-        ajout(){
-
-        },
-
-        test(){
-            alert(this.nom_c);
-        },
-
-
     }
 });

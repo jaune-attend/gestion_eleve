@@ -16,7 +16,6 @@ class Eleve
     public $prenom;
 
     public function __construct(){
-        $this ->primary_key = "id_e" ;
         $this->id 	= 0;
         $this->nom 	= "";
         $this->prenom 	= "";
