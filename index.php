@@ -19,70 +19,38 @@
     </div>
 </div>
 
-<main id="app">
-    <div class="container" id="onglet-1">
-        <h2>Gestion des Classes</h2>
-        <div class="row">
-            <div class="col-6">
-                <div class="block-left">
-                    <div class="input-group col-6 float-right">
-                        <input v-model="nom_c" type="text"  placeholder="Ajouter une classe" class="form-control mt-3">    <!--///// AJOUTER UNE CLASSE ////--->
-                        <div class="input-group-append mt-3">
-                            <button type="button" class="btn btn-info"  @click="AddClasse()">
-                                <img src="./css/plus.png" height="20" width="20">
-                            </button>
-                        </div>
-                    </div><br><br><br>
-                    <div v-for="elem in listeClasse" style="padding-left: 10px; padding-right: 10px">
-
-                        <label class="form-control ">{{elem.nom_c}} <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span> </label>
-
-<<<<<<< HEAD
-<template id="tpl-eleve-liste">
+<template id="tpl-eleve-liste">     <!------------------J'ai pas touché à ça faut l'adapter------------------->
     <main>
         <h3>Ajout eleve</h3>
         <input type="text" v-model="nom">
         <input type="text" v-model="prenom">
 
-        <button @click="addEleve()" type="button" class="btn-success"></button>
+        <button @click="addEleve(nom, prenom)" type="button" class="btn-success"></button>
     </main>
 </template>
 
-<main id="app">
-<div class="container">
-    <eleve-liste :id=1 :ref=1  :key=1></eleve-liste>
-    <h2>Gestion des Classes</h2>
-    <div class="row">
-        <div class="col-6">
-            <div class="block-left">
-                <div class="input-group col-6 float-right">
-                    <input type="text" placeholder="Ajouter une classe" class="form-control mt-3">
-                    <div class="input-group-append mt-3">
-                        <button type="button" class="btn btn-info">
-                            <img src="./css/plus.png" height="20" width="20">
-                        </button>
-                    </div>
-                </div><br><br><br>
-                <div v-for="elem in listeClasse">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Classe</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{elem.nom_c}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!--<classe-liste :id="elem.id_c" :ref="elem.id_c" :key="elem.id_c"></classe-liste> -->
-<!--                    <li style="background:#009bd4; list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> <b style="color: white">{{nom_c}}</b> <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Première <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-<!--                    <li style="list-style: none; margin-left: 10px; border-bottom: 1px solid black; padding-bottom: 20px"><img src="./css/edit.png" height="20" width="20"> Terminale <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span></li>-->
-=======
-                    </div>
->>>>>>> 4b37404df5b4e9cd9ce94488c4e61a7386c7e2e5
+<template id="tpl-classe-liste">        <!--------------------TEMPLATE CLASSE (se baser sur lui pour faire les autres)----------------->
+    <main>
+        <div class="input-group col-6 float-right">
+            <input v-model="nom_c" type="text"   @keyup.enter="AddClasse()" placeholder="Ajouter une classe" class="form-control mt-3">    <!--///// AJOUTER UNE CLASSE ////--->
+            <div class="input-group-append mt-3">
+                <button type="button" class="btn btn-info"  @click="AddClasse()">
+                    <img src="./css/plus.png" height="20" width="20">
+                </button>
+            </div>
+        </div><br><br><br>
+        <div v-for="elem in listeClasse" style="padding-left: 10px; padding-right: 10px">
+            <label class="form-control ">{{elem.nom_c}} <span class="float-right"><img src="./css/delete.png" height="20" width="20" style="margin-right: 10px"></span> </label>
+        </div>
+</template>
+
+<main id="app">                     <!------------------------MAIN---------------->
+    <div class="container" id="onglet-1">
+        <h2>Gestion des Classes</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="block-left">
+                    <classe-liste></classe-liste>
                 </div>
             </div>
             <div class="col-6">
@@ -142,7 +110,7 @@
             </div>
         </div>
     </div>
-    <!--/////////////////////////////// TEST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--/////////////////////////////// GESTION MATIERE - A FAIRE (On va adapter pour n'avoir qu'un seul container à la fin qui appellera juste els différents templates au lieu d'avoir 3 fois le même container) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="container hidden" id="onglet-2">
         <h2>Gestion des Matières</h2>
@@ -229,7 +197,7 @@
         </div>
     </div>
 
-    <!--/////////////////////////////// PARTIE ELEVE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--/////////////////////////////// PARTIE ELEVE - A FAIRE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="container hidden" id="onglet-3">
         <h2>Gestion des Elèves</h2>
