@@ -12,19 +12,23 @@ Vue.component("classeListe",{
     computed :{
     },
     mounted(){
+        this.GetClasses();
     },
     methods: {
-        GetClasse(){
+        GetClasses(){
             var scope = this;
-            var id = scope.id;
             $.ajax({
-                url: "03-Api/api.php?cas=classe",
+                url:"03-Api/api.php?cas=allclasse",
                 type:"POST",
-                data:{id},
+                data:{},
                 success:function(res){
-                    scope.classe = JSON.parse(res);
-                },
-            });
+                    var tmp = JSON.parse(res);
+                    setTimeout(()=>{
+                        scope.listeClasse = tmp;
+                        scope.$forceUpdate();
+                    },1);
+                }
+            })
         },
         ModifClasse(){
             var scope = this;
@@ -37,25 +41,27 @@ Vue.component("classeListe",{
                 type: "POST",
                 data:{id, nom_c},
                 success:function(){
-                    scope.GetClasse();
+                    scope.GetClasses();
                 },
             });
         },
-        // AddClasse(){
-        //     var scope = this;
-        //     var id = scope.id;
-        //     var nom_c = scope.nom_c;
-        //
-        //     $.ajax({
-        //         url:"03-Api/api.php?cas=addClasse",
-        //         type: "POST",
-        //         data: {id, nom_c},
-        //         success:function(){
-        //             scope.nom_c = "";
-        //             scope.GetClasse();
-        //         },
-        //     });
-        // },
+        AddClasse(){
+            var scope = this;
+            // alert(scope.nom_c);
+            var id = scope.id;
+            var nom_c = scope.nom_c;
+
+            $.ajax({
+                url:"03-Api/api.php?cas=addClasse",
+                type: "POST",
+                data: {nom_c},
+                success:function(){
+                    // alert(scope.nom_c);
+                    scope.nom_c = "";
+                    scope.GetClasses();
+                },
+            });
+        },
 
         ajout(){
 
