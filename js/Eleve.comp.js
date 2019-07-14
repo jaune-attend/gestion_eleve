@@ -24,10 +24,10 @@ Vue.component('eleveListe',
                     data: {},
                     success: function (res) {
                         var tmp = JSON.parse(res);
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             scope.list_eleve = tmp;
                             scope.$forceUpdate();
-                        },1);
+                        }, 1);
                     }
                 })
             },
@@ -49,19 +49,44 @@ Vue.component('eleveListe',
                 });
             },
 
-            supprEleve(eleve){
+            supprEleve(eleve) {
                 var scope = this;
                 var id = eleve.id;
 
                 $.ajax({
-                   url: "03-Api/api.php?cas=supprEleve",
-                   type: "POST",
-                   data: {id},
-                    success: function() {
-                       alert("L'élève est supprimé");
-                       scope.getAllEleve();
+                    url: "03-Api/api.php?cas=supprEleve",
+                    type: "POST",
+                    data: {id},
+                    success: function () {
+                        alert("L'élève est supprimé");
+                        scope.getAllEleve();
                     }
                 });
+            },
+
+            modifEleve(eleve) {
+                var scope = this;
+                var id = eleve.id;
+
+                var nom = prompt("Mettez le nouveau NOM");
+                var prenom = prompt("Mettre le nouveau PRENOM");
+                if ((nom == null) || (nom == "") || (prenom == null) || (prenom == ""))
+                {
+                    alert("Veuillez mettre des valeurs");
+                    return;
+                }
+                $.ajax({
+                    url: "03-Api/api.php?cas=modifEleve",
+                    type: "POST",
+                    data: {id, nom, prenom},
+                    success: function () {
+                        alert("Le profil de l'eleve a été modifié avec succées");
+                        scope.getAllEleve();
+                    }
+                });
+            },
+            test(){
+                alert("test");
             }
         }
     });

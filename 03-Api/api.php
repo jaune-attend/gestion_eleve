@@ -26,6 +26,21 @@ switch ($cas) {
         $e->id = $_POST['id'];
         $e->Delete();
         break;
+
+    case 'modifEleve':
+        $e = new Eleve();
+
+        $id = $_POST['id'];
+
+        $e->id = $id;
+        $e->Load();
+
+        $e->prenom = $_POST['prenom'];
+        $e->nom = $_POST['nom'];
+        $e->Update();
+
+        break;
+
         ///////////////////////////////////// MATIERE ///////////////////////////////
     case 'matiere':
         $id = $_POST['id'];

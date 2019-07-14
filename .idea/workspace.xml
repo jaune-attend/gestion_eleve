@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d81592b-2597-4356-b1b0-c31c68a13b50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/Note.comp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/02-Class/Eleve.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/02-Class/Eleve.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02-Class/Note.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/02-Class/Note.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Api/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/03-Api/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Classe.comp.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Classe.comp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Eleve.comp.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Eleve.comp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
@@ -19,11 +20,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4918919">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/03-Api/api.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+                <state relative-caret-position="527">
+                  <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
                 </state>
               </provider>
             </entry>
@@ -31,8 +32,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/01-Config/config-genos.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+                <state relative-caret-position="469">
+                  <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -40,17 +41,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3887">
-                  <caret line="279" column="18" lean-forward="true" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
+                <state relative-caret-position="147">
+                  <caret line="272" column="15" lean-forward="true" selection-end-line="294" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="453">
-                  <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+                <state relative-caret-position="164">
+                  <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -60,10 +61,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/Eleve.comp.js">
+            <entry file="file://$PROJECT_DIR$/js/Note.comp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="181">
-                  <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+                <state relative-caret-position="555">
+                  <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -72,7 +73,7 @@
             <entry file="file://$PROJECT_DIR$/js/app.vue.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="425">
-                  <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+                  <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -82,6 +83,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="663">
                   <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Eleve.comp.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
                 </state>
               </provider>
             </entry>
@@ -114,7 +124,6 @@
       <list>
         <option value="$PROJECT_DIR$/03-Api/Eleve.comp.js" />
         <option value="$PROJECT_DIR$/02-Class/Matiere.class.php" />
-        <option value="$PROJECT_DIR$/02-Class/Note.class.php" />
         <option value="$PROJECT_DIR$/01-Config/config-genos.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/script.js" />
@@ -124,16 +133,20 @@
         <option value="$PROJECT_DIR$/02-Class/Eleve.class.php" />
         <option value="$PROJECT_DIR$/js/app.vue.js" />
         <option value="$PROJECT_DIR$/js/Classe.comp.js" />
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/js/Eleve.comp.js" />
+        <option value="$PROJECT_DIR$/02-Class/Note.class.php" />
+        <option value="$PROJECT_DIR$/modification.php" />
         <option value="$PROJECT_DIR$/03-Api/api.php" />
+        <option value="$PROJECT_DIR$/js/Eleve.comp.js" />
+        <option value="$PROJECT_DIR$/js/Note.comp.js" />
+        <option value="$PROJECT_DIR$/test.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="150" />
+    <option name="y" value="-15" />
+    <option name="width" value="1440" />
+    <option name="height" value="765" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -142,7 +155,30 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gestion_eleve" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestion_eleve" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestion_eleve" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestion_eleve" type="462c0819:PsiDirectoryNode" />
+              <item name="02-Class" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestion_eleve" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestion_eleve" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -186,11 +222,12 @@
       <workItem from="1562277229687" duration="15380000" />
       <workItem from="1562839666245" duration="6785000" />
       <workItem from="1562857661052" duration="2264000" />
+      <workItem from="1563107847975" duration="9198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55808000" />
+    <option name="totallyTimeSpent" value="65006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -309,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-Class/Note.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02-Class/Matiere.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -330,6 +360,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/01-Config/config-genos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-Class/Note.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/02-Class/Eleve.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -337,17 +388,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/01-Config/config-genos.php">
+    <entry file="file://$PROJECT_DIR$/03-Api/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="527">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Eleve.comp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3887">
-          <caret line="279" column="18" lean-forward="true" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
+        <state relative-caret-position="147">
+          <caret line="272" column="15" lean-forward="true" selection-end-line="294" />
         </state>
       </provider>
     </entry>
@@ -358,31 +416,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.vue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03-Api/api.php">
+    <entry file="file://$PROJECT_DIR$/js/Note.comp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="555">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Eleve.comp.js">
+    <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="164">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
         </state>
       </provider>
     </entry>

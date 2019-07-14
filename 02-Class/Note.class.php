@@ -17,7 +17,6 @@ class Note
     public $id_e;
 
     public function __construct(){
-        $this ->primary_key = "id_n" ;
         $this->id 	= 0;
         $this->note = 0;
         $this->id_m = 0;

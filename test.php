@@ -14,6 +14,24 @@
 </head>
     <body>
 
+        <template id="tpl-eleve-note">
+            <main>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Matiere</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>134</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </template>
+
         <template id="tpl-eleve-liste">
             <main>
                 <div class="form-group">
@@ -30,10 +48,14 @@
                     </tr>
                     </thead>
                     <tbody v-for="elem in list_eleve">
-                    <tr>
+                    <tr @click="test()">
                         <td>{{elem.nom}}</td>
                         <td>{{elem.prenom}}</td>
-                        <td><a href="#" @click="supprEleve(elem)">Supprimer</a></td>
+                        <td>
+                            <button type="button" @click="supprEleve(elem)" class="btn-danger">Supprimer</button>
+                            <button type="button" @click="modifEleve(elem)" class="btn-warning">Modifier</button>
+                        </td>
+                        <note-eleve></note-eleve>
                     </tr>
                     </tbody>
                 </table>
@@ -52,5 +74,6 @@
         <script src="js/Eleve.comp.js"></script>
         <script src="js/Classe.comp.js"></script>
         <script src="js/app.vue.js"></script>
+        <script src="js/Note.comp.js"></script>
     </body>
 </html>
